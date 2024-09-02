@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  certificate-generator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: certificate_generator
+    volumes:
+      - .:/app  # Mount the current directory to /app inside the container
+    command: python generate_certificates.py
